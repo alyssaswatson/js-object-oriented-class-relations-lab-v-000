@@ -30,12 +30,12 @@ class Passenger {
   }
   trips() {
     return store.trips.filter(trip => {
-      return trip.driverId == this.id;
+      return trip.passengerId == this.id;
     });
   }
-  passengers() {
+  drivers() {
     return this.trips().map(trip => {
-      return trip.passenger();
+      return trip.drivers();
     });
   }
 }
